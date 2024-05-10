@@ -14,7 +14,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Register />} />
-
         <Route path="/characters" element={<Characters />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/comics" element={<Comics />} />

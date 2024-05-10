@@ -3,7 +3,25 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  /* Cores */
+  --color-text: #ffffff;
+  --color-background: #000000;
+  --color-primary: #ff0000;
+  --color-secondary: #84848d;
 
+  /* Fontes */
+  --font-primary: "Marvel", Arial, sans-serif;
+  --font-secondary: "Axiforma", Helvetica, sans-serif;
+  --font-axiforma-light: "AxiformaLight", Arial, sans-serif;
+  --font-axiforma-thin: "AxiformaThin", Arial, sans-serif;
+}
 body {
-  font-family: Arial, sans-serif; /* Defina sua fonte padrão aqui */
+  min-height: 86vh;
+  background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 1) 50%
+    ),
+    url("./assets/background.svg");
 }
