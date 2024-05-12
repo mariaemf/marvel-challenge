@@ -1,7 +1,7 @@
 import React from "react";
 
 function Characters() {
-  return <div>Characters</div>;
+  return <div style={{ color: "#fff" }}>Characters</div>;
 }
 
 export default Characters;
