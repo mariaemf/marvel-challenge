@@ -11,7 +11,7 @@ export const WrapperHeader = styled.div`
   justify-content: space-between;
 
   background: var(--color-background);
-  box-shadow: 0 2px 4px var(--color-primary);
+  box-shadow: 0 2px 0px var(--color-primary);
 `;
 
 export const LogoHeader = styled.div`

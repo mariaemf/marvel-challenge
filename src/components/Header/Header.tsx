@@ -21,9 +21,7 @@ function Header() {
 
       <HeaderNavigation>
         <StyledLink to="/characters">Personagens</StyledLink>
-
         <StyledLink to="/movies">Filmes</StyledLink>
-
         <StyledLink to="/comics">HQs</StyledLink>
       </HeaderNavigation>
 
