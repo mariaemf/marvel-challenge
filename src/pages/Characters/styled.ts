@@ -9,5 +9,10 @@ export const WrapperCardContainer = styled.div`
 
 export const ContainerCard = styled.div`
   display: flex;
-  gap: 24px;
+  gap: 42px;
+`;
+
+export const ButtonCard = styled.button`
+  background: transparent;
+  border: none;
 `;

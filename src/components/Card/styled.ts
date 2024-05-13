@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const WrappperCard = styled.div`
   position: relative;
   width: 100%;
-  max-width: 300px;
+  width: 400px;
   height: auto;
-  max-height: 400px;
   border-radius: 32px;
   overflow: hidden;
   margin-left: 16px;
@@ -33,7 +32,7 @@ export const Title = styled.h2`
   color: var(--color-text);
   font-family: var(--font-secondary);
   font-weight: bold;
-  margin: 18px 0 12px 0;
+  margin: 18px 0 10px 0;
 `;
 
 export const Description = styled.p`
@@ -42,12 +41,15 @@ export const Description = styled.p`
   font-size: 16px;
   padding: 14px;
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 16px;
 `;
 
 export const SeeDetails = styled.a`
   color: var(--color-text);
   font-family: var(--font-secondary);
   text-decoration: none;
-
+  margin-top: 2px;
   cursor: pointer;
 `;
