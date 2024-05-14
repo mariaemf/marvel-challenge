@@ -3,10 +3,10 @@ import { useState } from "react";
 import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header";
 
-import Hulk from "../../assets/heroImage/hulk.svg";
-import Wanda from "../../assets/heroImage/wanda.svg";
-import Thanos from "../../assets/heroImage/thanos.svg";
-import Spider from "../../assets/heroImage/spiderman.svg";
+import Hulk from "../../assets/heroImages/hulk.svg";
+import Wanda from "../../assets/heroImages/wanda.svg";
+import Thanos from "../../assets/heroImages/thanos.svg";
+import Spider from "../../assets/heroImages/spiderman.svg";
 
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
@@ -144,7 +144,6 @@ function Characters() {
 
   return (
     <>
-      <Header />
       <WrapperCardContainer>
         <ButtonCard onClick={onPrevious} disabled={startIndex === 0}>
           <FaArrowLeft color="#FF0000" size={32} />
@@ -189,15 +188,3 @@ function Characters() {
 }
 
 export default Characters;
-
-{
-  /*
-        {/* {datasCharactersDetails.map((character, index) => (
-          <div key={index}>
-            {/* Renderizar cada card de personagem aqui */
-}
-//<button onClick={() => openModal(index)}>Ver Detalhes</button>
-// </div>
-// ))}
-
-//  */}
