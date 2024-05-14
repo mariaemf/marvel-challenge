@@ -5,6 +5,7 @@ export const WrapperCardContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  gap: 42px;
 `;
 
 export const ContainerCard = styled.div`
@@ -15,4 +16,29 @@ export const ContainerCard = styled.div`
 export const ButtonCard = styled.button`
   background: transparent;
   border: none;
+`;
+
+export const WrapperModal = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+
+  z-index: 1000;
+
+  width: 100%;
+  height: 100%;
+`;
+
+export const WrapperModalButton = styled.div`
+  display: flex;
+  margin-right: 46px;
 `;

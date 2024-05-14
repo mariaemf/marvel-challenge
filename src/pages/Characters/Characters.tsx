@@ -10,9 +10,56 @@ import Spider from "../../assets/heroImage/spiderman.svg";
 
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
-import { ButtonCard, ContainerCard, WrapperCardContainer } from "./styled";
+import {
+  ButtonCard,
+  ContainerCard,
+  WrapperCardContainer,
+  WrapperModal,
+  WrapperModalButton,
+} from "./styled";
+
+import DetaileadModal, {
+  IDetaileadModalProps,
+} from "../../components/DetailedModal/DetaileadModal";
+
+interface Character {
+  title: string;
+  description: string;
+  image: string;
+}
 
 function Characters() {
+  const [startIndex, setStartIndex] = useState(0);
+  const [modalOpen, setModalOpen] = useState(true);
+  const [selectedCharacterIndex, setSelectedCharacterIndex] = useState(0);
+
+  const onNext = () => {
+    setStartIndex((prevIndex) => prevIndex + 1);
+  };
+
+  const onPrevious = () => {
+    setStartIndex((prevIndex) => prevIndex - 1);
+  };
+
+  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(
+    null
+  );
+
+  const openModal = (character: Character) => {
+    setSelectedCharacter(character);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const nextCharacter = () => {
+    const nextIndex =
+      (selectedCharacterIndex + 1) % datasCharactersDetails.length;
+    setSelectedCharacterIndex(nextIndex);
+  };
+
   const characters = [
     {
       title: "Homem-Aranha",
@@ -44,15 +91,56 @@ function Characters() {
     },
   ];
 
-  const [startIndex, setStartIndex] = useState(0);
-
-  const onNext = () => {
-    setStartIndex((prevIndex) => prevIndex + 1);
-  };
-
-  const onPrevious = () => {
-    setStartIndex((prevIndex) => prevIndex - 1);
-  };
+  const datasCharactersDetails: IDetaileadModalProps[] = [
+    {
+      image: Spider,
+      title: "Homem-Aranha",
+      descriptions: "Descrições do Homem-Aranha",
+      whichMovie: ["Vingadores", "Filme do Homem-Aranha"],
+      whichSaga: ["Guardiões da Galáxia", "HasCharacter"],
+      reviews: "Revisões do Homem-Aranha",
+      starsOrange: 4,
+      starsGray: 1,
+      andAcharacter: true,
+      synopsisDescription: "",
+    },
+    {
+      image: Wanda,
+      title: "Wand Maximoff",
+      descriptions: "Descrições do Wand",
+      whichMovie: ["Filme do Wand", "Filme do Wand", "Filme do Wand"],
+      whichSaga: ["HasCharacter", "HasCharacter", "HasCharacter"],
+      reviews: "Revisões do Wand",
+      starsOrange: 2,
+      starsGray: 3,
+      andAcharacter: true,
+      synopsisDescription: "",
+    },
+    {
+      image: Thanos,
+      title: "Thanos",
+      descriptions: "Descrições do Thanos",
+      whichMovie: ["Vingadores", "Filme do Thanos"],
+      whichSaga: ["Guardiões da Galáxia", "HasCharacter"],
+      reviews: "Revisões do Thanos",
+      starsOrange: 5,
+      starsGray: 0,
+      andAcharacter: true,
+      synopsisDescription: "",
+    },
+    {
+      image: Hulk,
+      title: "Hulk",
+      descriptions: "Descrições do Hulk",
+      whichMovie: ["Vingadores", "Filme do Hulk"],
+      whichSaga: ["Guardiões da Galáxia", "HasCharacter"],
+      reviews: "Revisões do Hulk",
+      starsOrange: 5,
+      starsGray: 0,
+      andAcharacter: true,
+      synopsisDescription: "",
+    },
+  ];
 
   return (
     <>
@@ -70,8 +158,8 @@ function Characters() {
                 key={index}
                 title={character.title}
                 description={character.description}
-                onClick={character.onClick}
                 image={character.image}
+                onClick={() => openModal(character)}
               />
             ))}
           <ButtonCard
@@ -82,8 +170,34 @@ function Characters() {
           </ButtonCard>
         </ContainerCard>
       </WrapperCardContainer>
+
+      <>
+        {modalOpen && (
+          <WrapperModal>
+            <DetaileadModal
+              closeModal={closeModal}
+              data={datasCharactersDetails[selectedCharacterIndex]}
+            />
+            <WrapperModalButton>
+              <FaArrowRight onClick={nextCharacter} color="#FF0000" size={32} />
+            </WrapperModalButton>
+          </WrapperModal>
+        )}
+      </>
     </>
   );
 }
 
 export default Characters;
+
+{
+  /*
+        {/* {datasCharactersDetails.map((character, index) => (
+          <div key={index}>
+            {/* Renderizar cada card de personagem aqui */
+}
+//<button onClick={() => openModal(index)}>Ver Detalhes</button>
+// </div>
+// ))}
+
+//  */}

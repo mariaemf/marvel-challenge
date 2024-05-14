@@ -31,6 +31,7 @@ export const CardInformation = styled.div`
 export const Title = styled.h2`
   color: var(--color-text);
   font-family: var(--font-secondary);
+  font-size: 24px;
   font-weight: bold;
   margin: 18px 0 10px 0;
 `;
@@ -49,6 +50,7 @@ export const Description = styled.p`
 export const SeeDetails = styled.a`
   color: var(--color-text);
   font-family: var(--font-secondary);
+  font-size: 20px;
   text-decoration: none;
   margin-top: 2px;
   cursor: pointer;
