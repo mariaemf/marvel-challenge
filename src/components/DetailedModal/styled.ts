@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerModal = styled.div`
-  position: absolute;
+  position: fixed; /* Alterado para 'fixed' */
   height: 430px;
 
   top: 50%;
@@ -32,15 +32,16 @@ export const ModalImage = styled.img`
 export const ContainerInfoModal = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
+  padding-bottom: 32px;
 `;
 
 export const TitleModal = styled.h2`
-  margin-top: 32px;
   font-family: var(--font-secondary);
   font-weight: bold;
   font-size: 30px;
-
-  margin-bottom: 14px;
+  margin-top: 16px;
 
   color: var(--color-text);
 `;
@@ -48,7 +49,6 @@ export const TitleModal = styled.h2`
 export const WrapperDescriptions = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 32px;
   gap: 4px;
   color: var(--color-text);
 
@@ -71,7 +71,6 @@ export const WrapperDescriptions = styled.div`
 
 export const ContainerSynopsisDescription = styled.div`
   width: 250px;
-  margin-bottom: 14px;
 
   P {
     font-size: 14px;
@@ -83,6 +82,7 @@ export const ContainerSynopsisDescription = styled.div`
 export const Reviews = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 42px;
 
   h3 {
     font-size: 26px;
@@ -96,7 +96,6 @@ export const ContainerAvailability = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin: 16px 0;
 
   h2 {
     font-size: 16px;
@@ -105,7 +104,7 @@ export const ContainerAvailability = styled.div`
     font-weight: 400;
   }
   img {
-    width: 65px;
+    width: 52px;
   }
 `;
 

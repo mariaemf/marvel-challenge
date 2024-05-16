@@ -10,8 +10,9 @@ import {
   WrapperDescriptions,
   WrapperImageModal,
 } from "./styled";
-import { IoMdCloseCircleOutline } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
+
+import { IoMdCloseCircleOutline } from "react-icons/io";
 import { IDetaileadModalProps } from "../../types/detaileadModal";
 
 const DetaileadModal: React.FC<IDetaileadModalProps> = ({
@@ -77,10 +78,10 @@ const DetaileadModal: React.FC<IDetaileadModalProps> = ({
           <h3>{reviews}</h3>
           <div>
             {[...Array(starsOrange)].map((_, index) => (
-              <FaStar key={`orange_${index}`} size={42} color="#FF9C00" />
+              <FaStar key={`orange_${index}`} size={30} color="#FF9C00" />
             ))}
             {[...Array(starsGray)].map((_, index) => (
-              <FaStar key={`gray_${index}`} size={42} color="#84848D" />
+              <FaStar key={`gray_${index}`} size={30} color="#84848D" />
             ))}
           </div>
         </Reviews>
