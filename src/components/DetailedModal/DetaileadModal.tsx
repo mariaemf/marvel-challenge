@@ -11,24 +11,7 @@ import {
 } from "./styled";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
-import disney from "../../assets/shoppingImage/americanas.svg";
-
-export interface IDetaileadModalProps {
-  closeModal: () => void;
-  data: {
-    id: string;
-    image: string;
-    title: string;
-    descriptions: string;
-    whichMovie: string[];
-    whichSaga: string[];
-    reviews: string;
-    starsOrange: number;
-    starsGray: number;
-    andAcharacter: boolean;
-    synopsisDescription: string;
-  };
-}
+import { IDetaileadModalProps } from "../../types/detaileadModal";
 
 const DetaileadModal: React.FC<IDetaileadModalProps> = ({
   closeModal,
@@ -38,7 +21,6 @@ const DetaileadModal: React.FC<IDetaileadModalProps> = ({
     closeModal();
   };
   const {
-    id,
     image,
     title,
     descriptions,
@@ -49,10 +31,13 @@ const DetaileadModal: React.FC<IDetaileadModalProps> = ({
     starsGray,
     andAcharacter,
     synopsisDescription,
+    placesToBuy,
+    additionalImage,
+    avaliableToPurchase,
   } = data;
 
   return (
-    <ContainerModal id={id}>
+    <ContainerModal>
       <ModalImage src={image} alt="" />
       <ContainerInfoModal>
         <TitleModal>{title}</TitleModal>
@@ -61,9 +46,9 @@ const DetaileadModal: React.FC<IDetaileadModalProps> = ({
           <WrapperDescriptions>
             <h4>{descriptions}:</h4>
             <>
-              {whichMovie.map((movie, index) => (
+              {whichMovie?.map((movie, index) => (
                 <p key={index}>
-                  {movie} - <span>{whichSaga[index]}</span>
+                  {movie} - <span>{whichSaga?.[index]}</span>
                 </p>
               ))}
             </>
@@ -75,9 +60,12 @@ const DetaileadModal: React.FC<IDetaileadModalProps> = ({
         )}
         {andAcharacter ? null : (
           <ContainerAvailability>
-            <h2>Disponível para compra:</h2>
+            <h2>{avaliableToPurchase}</h2>
             <div>
-              <img src={disney} alt="" />
+              <img src={placesToBuy} alt="" />
+              <>
+                {additionalImage ? <img src={additionalImage} alt="" /> : null}
+              </>
             </div>
           </ContainerAvailability>
         )}

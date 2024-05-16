@@ -18,6 +18,7 @@ export const CardInformation = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-between;
   position: absolute;
 
   bottom: 0;
@@ -39,7 +40,7 @@ export const Title = styled.h2`
 export const Description = styled.p`
   color: var(--color-text);
   font-family: var(--font-secondary);
-  font-size: 16px;
+  font-size: 14px;
   padding: 14px;
   text-align: center;
   overflow: hidden;
@@ -52,6 +53,6 @@ export const SeeDetails = styled.a`
   font-family: var(--font-secondary);
   font-size: 20px;
   text-decoration: none;
-  margin-top: 2px;
+  margin-bottom: 12px;
   cursor: pointer;
 `;

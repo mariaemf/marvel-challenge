@@ -98,6 +98,9 @@ export const ContainerAvailability = styled.div`
     color: var(--color-text);
     font-weight: 400;
   }
+  img {
+    width: 65px;
+  }
 `;
 
 export const CloseModalButton = styled.div`
