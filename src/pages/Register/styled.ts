@@ -21,6 +21,7 @@ to {
 export const ContainerRegister = styled.div`
   display: flex;
   flex-direction: column;
+  width: 600px;
   gap: 14px;
 
   width: 50vw;
@@ -29,11 +30,21 @@ export const ContainerRegister = styled.div`
 
   color: var(--color-text);
   animation: ${fadeIn} 1s ease-in-out;
+
+  @media only screen and (min-width: 481px) and (max-width: 760px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 export const WrapperLogo = styled.div`
   display: flex;
   flex-direction: column;
-  animation: ${slideInFromBottom} 1s ease-in-out; // Aplica a animação de deslizar
+  width: 400px;
+  align-items: center;
+
+  animation: ${slideInFromBottom} 1s ease-in-out;
 
   p {
     font-size: 100px;
@@ -54,6 +65,9 @@ export const WelcomeText = styled.div`
   font-family: var(--font-secondary);
   font-weight: bold;
   font-size: 30px;
+
+  padding-left: 2rem;
+  margin-bottom: 12px;
   animation: ${fadeIn} 7s ease-in-out;
 `;
 
@@ -71,7 +85,7 @@ export const InputGroup = styled.div`
   animation: ${fadeIn} 7s ease-in-out;
 `;
 export const ButtonLogin = styled.button`
-  width: 380px;
+  width: 400px;
   height: 60px;
   border-radius: 32px;
   margin-bottom: 14px;
@@ -81,11 +95,13 @@ export const ButtonLogin = styled.button`
   color: var(--color-text);
   font-family: var(--font-primary);
   font-size: 24px;
+
+  cursor: pointer;
   animation: ${fadeIn} 7s ease-in-out;
 `;
 
 export const WrapperloginAndPassword = styled.div`
-  width: 350px;
+  width: 380px;
   margin: 16px 0;
   display: flex;
   justify-content: space-between;
@@ -105,7 +121,7 @@ export const InputLogin = styled.div`
     color: var(--color-secondary);
     font-family: var(--font-axiforma-light);
     font-weight: lighter;
-    font-size: 14px;
+    font-size: 16px;
   }
 `;
 
@@ -114,7 +130,7 @@ export const Password = styled.div`
   font-family: var(--font-axiforma-light);
   border-bottom: 1px solid var(--color-primary);
   font-weight: lighter;
-  font-size: 14px;
+  font-size: 16px;
 
   cursor: pointer;
   animation: ${fadeIn} 7s ease-in-out;

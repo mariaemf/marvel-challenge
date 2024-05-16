@@ -2,27 +2,44 @@ import {
   GetOutButton,
   HeaderNavigation,
   LogoHeader,
-  StyledLink,
+  StyledNavLink,
   UserSection,
   WrapperHeader,
 } from "./styled";
 import ProfilePhoto from "../../assets/profile.svg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleGetOut = () => {
     navigate("/");
   };
+
   return (
     <WrapperHeader>
       <LogoHeader>MA</LogoHeader>
 
       <HeaderNavigation>
-        <StyledLink to="/characters">Personagens</StyledLink>
-        <StyledLink to="/movies">Filmes</StyledLink>
-        <StyledLink to="/comics">HQs</StyledLink>
+        <StyledNavLink
+          to="/characters"
+          isSelected={location.pathname === "/characters"}
+        >
+          Personagens
+        </StyledNavLink>
+        <StyledNavLink
+          to="/movies"
+          isSelected={location.pathname === "/movies"}
+        >
+          Filmes
+        </StyledNavLink>
+        <StyledNavLink
+          to="/comics"
+          isSelected={location.pathname === "/comics"}
+        >
+          HQs
+        </StyledNavLink>
       </HeaderNavigation>
 
       <UserSection>

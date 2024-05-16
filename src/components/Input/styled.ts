@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const StyledInput = styled.input`
-  width: 380px;
-  height: 60px;
+  width: 400px;
+  height: 75px;
   padding: 24px;
   border-radius: 32px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   border: none;
 
   &::placeholder {

@@ -12,15 +12,11 @@ import DetaileadModal from "../../components/DetailedModal/DetaileadModal";
 
 import { characters } from "./charactersData";
 import { datasCharactersDetails } from "./charactersDetailsData";
-import { Icard } from "../../types/card";
 
 function Characters() {
   const [startIndex, setStartIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedCharacterIndex, setSelectedCharacterIndex] = useState(0);
-  const [selectedCharacter, setSelectedCharacter] = useState<Icard | null>(
-    null
-  );
+  const [selectedCharacterIndex, setSelectedCharacterIndex] = useState(null);
 
   const onNext = () => {
     setStartIndex((prevIndex) => prevIndex + 1);
@@ -30,8 +26,8 @@ function Characters() {
     setStartIndex((prevIndex) => prevIndex - 1);
   };
 
-  const openModal = (character: Icard) => {
-    setSelectedCharacter(character);
+  const openModal = (index) => {
+    setSelectedCharacterIndex(index);
     setModalOpen(true);
   };
 
@@ -41,8 +37,11 @@ function Characters() {
 
   const nextCharacter = () => {
     const nextIndex =
-      (selectedCharacterIndex + 1) % datasCharactersDetails.length;
+      ((selectedCharacterIndex ?? -1) + 1) % datasCharactersDetails.length;
     setSelectedCharacterIndex(nextIndex);
+    if (nextIndex === 0) {
+      closeModal();
+    }
   };
 
   return (
@@ -61,7 +60,7 @@ function Characters() {
                 title={character.title}
                 description={character.description}
                 image={character.image}
-                onClick={() => openModal(character)}
+                onClick={() => openModal(index + startIndex)}
               />
             ))}
           <ButtonCard

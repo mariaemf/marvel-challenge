@@ -10,13 +10,11 @@ import { movies } from "./moviesData";
 import { moviesDetails } from "./moviesDetailsData";
 import DetaileadModal from "../../components/DetailedModal/DetaileadModal";
 import { WrapperModal, WrapperModalButton } from "../Characters/styled";
-import { Icard } from "../../types/card";
 
 function Movies() {
   const [startIndex, setStartIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedMoviesIndex, setSelectedMoviesIndex] = useState(0);
-  const [selectedMovie, setSelectedMovie] = useState<Icard | null>(null);
+  const [selectedMoviesIndex, setSelectedMoviesIndex] = useState(null);
 
   const onNext = () => {
     setStartIndex((prevIndex) => prevIndex + 1);
@@ -26,8 +24,8 @@ function Movies() {
     setStartIndex((prevIndex) => prevIndex - 1);
   };
 
-  const openModal = (movie: Icard) => {
-    setSelectedMovie(movie);
+  const openModal = (index) => {
+    setSelectedMoviesIndex(index);
     setModalOpen(true);
   };
 
@@ -36,8 +34,11 @@ function Movies() {
   };
 
   const nextMovie = () => {
-    const nextIndex = (selectedMoviesIndex + 1) % moviesDetails.length;
+    const nextIndex = ((selectedMoviesIndex ?? -1) + 1) % moviesDetails.length;
     setSelectedMoviesIndex(nextIndex);
+    if (nextIndex === 0) {
+      closeModal();
+    }
   };
 
   return (
@@ -53,7 +54,7 @@ function Movies() {
               title={movie.title}
               description={movie.description}
               image={movie.image}
-              onClick={() => openModal(movie)}
+              onClick={() => openModal(index + startIndex)}
             />
           ))}
           <ButtonCard

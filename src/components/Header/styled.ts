@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { NavLink, NavLinkProps } from "react-router-dom";
 import styled from "styled-components";
-
+interface StyledNavLinkProps extends NavLinkProps {
+  isSelected?: boolean;
+}
 export const WrapperHeader = styled.div`
   width: 100%;
   height: 110px;
@@ -35,8 +37,9 @@ export const HeaderNavigation = styled.div`
   gap: 16rem;
 `;
 
-export const StyledLink = styled(Link)`
-  color: var(--color-secondary);
+export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
+  color: ${({ isSelected }) =>
+    isSelected ? "var(--color-text)" : "var(--color-secondary)"};
   font-size: 30px;
   font-family: var(--font-secondary);
   font-weight: bold;
@@ -47,7 +50,6 @@ export const StyledLink = styled(Link)`
     color: var(--color-text);
   }
 `;
-
 export const UserSection = styled.div`
   display: flex;
   flex-direction: row;

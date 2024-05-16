@@ -9,17 +9,14 @@ import DetaileadModal from "../../components/DetailedModal/DetaileadModal";
 import { useState } from "react";
 import { comics } from "./comicsData";
 import { datasComicsDetails } from "./comicsDetailsData";
-import { DetailedComics } from "../../types/comics";
-import { Icard } from "../../types/card";
 
 function Comics() {
   const [startIndex, setStartIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedComicsIndex, setSelectedComicsIndex] = useState(0);
-  const [selectedComics, setSelectedComics] = useState<Icard | null>(null);
+  const [selectedComicsIndex, setSelectedComicsIndex] = useState(null);
 
-  const openModal = (comics: Icard) => {
-    setSelectedComics(comics);
+  const openModal = (index) => {
+    setSelectedComicsIndex(index);
     setModalOpen(true);
   };
 
@@ -28,8 +25,12 @@ function Comics() {
   };
 
   const nextComics = () => {
-    const nextIndex = (selectedComicsIndex + 1) % datasComicsDetails.length;
+    const nextIndex =
+      ((selectedComicsIndex ?? -1) + 1) % datasComicsDetails.length;
     setSelectedComicsIndex(nextIndex);
+    if (nextIndex === 0) {
+      closeModal();
+    }
   };
 
   return (
@@ -42,7 +43,7 @@ function Comics() {
               title={comics.title}
               description={comics.description}
               image={comics.image}
-              onClick={() => openModal(comics)}
+              onClick={() => openModal(index + startIndex)}
             />
           ))}
         </ContainerCardMovies>
