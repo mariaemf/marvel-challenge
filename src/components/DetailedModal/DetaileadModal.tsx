@@ -8,6 +8,7 @@ import {
   Reviews,
   TitleModal,
   WrapperDescriptions,
+  WrapperImageModal,
 } from "./styled";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
@@ -38,7 +39,9 @@ const DetaileadModal: React.FC<IDetaileadModalProps> = ({
 
   return (
     <ContainerModal>
-      <ModalImage src={image} alt="" />
+      <WrapperImageModal>
+        <ModalImage src={image} alt="" />
+      </WrapperImageModal>
       <ContainerInfoModal>
         <TitleModal>{title}</TitleModal>
 

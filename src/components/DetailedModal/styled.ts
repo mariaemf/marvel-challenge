@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerModal = styled.div`
   position: absolute;
-  height: 440px;
+  height: 430px;
 
   top: 50%;
   left: 30%;
@@ -16,6 +16,12 @@ export const ContainerModal = styled.div`
   grid-template-columns: 1fr 1fr;
   background: linear-gradient(to right, #ff0000, #800000);
   border-radius: 32px;
+`;
+
+export const WrapperImageModal = styled.div`
+  display: flex;
+  margin-left: -10px;
+  margin-top: -6px;
 `;
 
 export const ModalImage = styled.img`
