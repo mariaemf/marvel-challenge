@@ -33,4 +33,10 @@ npm install
 
 ### Executar a Aplicação:
 npm run dev 
+
+# Conclusão
+O Marvel Challenge é um projeto desenvolvido com ReactJS e TypeScript, utilizando Vite para o ambiente de desenvolvimento, e incluindo animações para proporcionar uma experiência mais dinâmica aos usuários. Esta documentação fornece uma visão geral do projeto e orientações sobre como executá-lo.
+
+
+
 # marvel-challenge
