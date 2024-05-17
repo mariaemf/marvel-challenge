@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const ContainerModal = styled.div`
   position: fixed;
-  height: 430px;
+  height: 600px;
 
   top: 50%;
   left: 30%;
-  width: 80%;
-  max-width: 700px;
+  width: 100%;
+  max-width: 900px;
   z-index: 1001;
 
   transform: translate(-50%, -50%);
@@ -16,12 +16,46 @@ export const ContainerModal = styled.div`
   grid-template-columns: 1fr 1fr;
   background: linear-gradient(to right, #ff0000, #800000);
   border-radius: 32px;
+
+  @media only screen and (min-width: 1187px) and (max-width: 1400px) {
+    height: 500px;
+    width: 100%;
+    max-width: 700px;
+  }
+  @media only screen and (min-width: 900px) and (max-width: 1187px) {
+    height: 450px;
+    width: 100%;
+    max-width: 650px;
+    left: 38%;
+  }
+  @media only screen and (min-width: 600px) and (max-width: 890px) {
+    height: 430px;
+    width: 100%;
+    max-width: 580px;
+    left: 50%;
+  }
+  @media only screen and (min-width: 400px) and (max-width: 599px) {
+    height: 300px;
+    width: 100%;
+    max-width: 350px;
+
+    left: 45%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px;
+  }
 `;
 
 export const WrapperImageModal = styled.div`
   display: flex;
   margin-left: -10px;
   margin-top: -6px;
+  @media only screen and (min-width: 400px) and (max-width: 599px) {
+    img {
+      display: none;
+    }
+  }
 `;
 
 export const ModalImage = styled.img`
@@ -44,6 +78,9 @@ export const TitleModal = styled.h2`
   margin-top: 16px;
 
   color: var(--color-text);
+  @media only screen and (min-width: 400px) and (max-width: 599px) {
+    font-size: 28px;
+  }
 `;
 
 export const WrapperDescriptions = styled.div`
@@ -77,6 +114,13 @@ export const ContainerSynopsisDescription = styled.div`
     color: var(--color-text);
     font-family: var(--font-axiforma-thin);
   }
+
+  @media only screen and (min-width: 400px) and (max-width: 599px) {
+    p {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+  }
 `;
 
 export const Reviews = styled.div`
@@ -89,6 +133,15 @@ export const Reviews = styled.div`
     font-weight: lighter;
     font-family: var(--font-secondary);
     color: var(--color-text);
+  }
+
+  @media only screen and (min-width: 400px) and (max-width: 599px) {
+    h3 {
+      font-size: 18px;
+      color: var(--color-text);
+      font-family: var(--font-axiforma-thin);
+      margin-top: 16px;
+    }
   }
 `;
 
