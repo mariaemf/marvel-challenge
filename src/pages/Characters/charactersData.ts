@@ -3,9 +3,7 @@ import Wanda from "../../assets/heroImages/wanda.svg";
 import Thanos from "../../assets/heroImages/thanos.svg";
 import Spider from "../../assets/heroImages/spiderman.svg";
 
-import { Icard } from "../../types/card";
-
-export const characters: Icard[] = [
+export const characters = [
   {
     title: "Homem-Aranha",
     description:

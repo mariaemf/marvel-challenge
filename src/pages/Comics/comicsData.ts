@@ -2,9 +2,7 @@ import ThorComics from "../../assets/hqsImages/thorHqs.svg";
 import SilverSuferComics from "../../assets/hqsImages/silverSuferHqs.svg";
 import WolwerineComics from "../../assets/hqsImages/wolverineHqs.svg";
 
-import { Icard } from "../../types/card";
-
-export const comics: Icard[] = [
+export const comics = [
   {
     title: "Thor: Vikings",
     description:

@@ -3,14 +3,6 @@ import styled from "styled-components";
 export interface DropDownContentProps {
   show: boolean;
 }
-export const WrapperCardContainerMovies = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin-top: 8rem;
-  gap: 42px;
-`;
 
 export const DropDownFilter = styled.div<DropDownContentProps>`
   width: 160px;
@@ -35,8 +27,35 @@ export const DropDownFilter = styled.div<DropDownContentProps>`
     font-family: var(--font-secondary);
     font-weight: bold;
   }
+
   max-height: ${(props: DropDownContentProps) =>
     props.show ? "300px" : "60px"};
+
+  @media only screen and (min-width: 375px) and (max-width: 590px) {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+
+    top: 8rem;
+    left: 2rem;
+    h2 {
+      font-size: 12px;
+      color: var(--color-primary);
+      font-family: var(--font-secondary);
+      font-weight: bold;
+    }
+  }
+`;
+export const ButtonFilter = styled.button`
+  display: flex;
+  font-size: 16px;
+  color: var(--color-primary);
+  font-family: var(--font-secondary);
+  font-weight: bold;
+
+  background: transparent;
+  border: none;
 `;
 export const DropDownContent = styled.div<DropDownContentProps>`
   display: ${(props) => (props.show ? "flex" : "none")};
@@ -51,26 +70,7 @@ export const FilterIcon = styled.div`
   justify-content: space-between;
 `;
 
-export const ButtonCard = styled.div`
+export const ButtonCard = styled.button`
   background: transparent;
   border: none;
-`;
-
-export const ContainerCardMovies = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 42px;
-
-  @media only screen and (min-width: 750px) and (max-width: 960px) {
-    width: 100%;
-    display: flex;
-    padding: 24px;
-  }
-  @media only screen and (min-width: 375px) and (max-width: 740px) {
-    display: flex;
-    flex-direction: column;
-
-    position: relative;
-    top: 42px;
-  }
 `;

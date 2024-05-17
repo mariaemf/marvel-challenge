@@ -1,13 +1,5 @@
 import styled from "styled-components";
 
-export const WrapperCardContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8rem;
-  gap: 42px;
-`;
-
 export const ContainerCard = styled.div`
   display: flex;
   gap: 42px;
@@ -22,47 +14,8 @@ export const ContainerCard = styled.div`
     flex-direction: column;
 
     position: relative;
-    top: 42px;
+    bottom: 4rem;
   }
-`;
-
-export const WrapperButtonCard = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-  margin-top: 32px;
-
-  @media only screen and (min-width: 375px) and (max-width: 740px) {
-    position: relative;
-    display: flex;
-    top: 4rem;
-  }
-`;
-
-export const ButtonCard = styled.button`
-  background: transparent;
-  border: none;
-`;
-
-export const WrapperModal = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: end;
-
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-
-  z-index: 1000;
-
-  width: 100%;
-  height: 100%;
 `;
 
 export const WrapperModalButton = styled.div`

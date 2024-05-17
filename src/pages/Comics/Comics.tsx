@@ -1,14 +1,15 @@
-import { FaArrowRight } from "react-icons/fa";
-import { WrapperModal, WrapperModalButton } from "../Characters/styled";
-import {
-  ContainerCardMovies,
-  WrapperCardContainerMovies,
-} from "../Movies/styled";
-import Card from "../../components/Card/Card";
-import DetaileadModal from "../../components/DetailedModal/DetaileadModal";
 import { useState } from "react";
 import { comics } from "./comicsData";
+import { FaArrowRight } from "react-icons/fa";
+import Card from "../../components/Card/Card";
+import {
+  ContainerCard,
+  WrapperCardContainer,
+  WrapperModal,
+  WrapperModalButton,
+} from "../../components/Layout/GlobalStyled";
 import { datasComicsDetails } from "./comicsDetailsData";
+import DetaileadModal from "../../components/DetailedModal/DetaileadModal";
 
 function Comics() {
   const [startIndex, setStartIndex] = useState(0);
@@ -35,8 +36,8 @@ function Comics() {
 
   return (
     <>
-      <WrapperCardContainerMovies>
-        <ContainerCardMovies>
+      <WrapperCardContainer>
+        <ContainerCard>
           {comics.slice(startIndex, startIndex + 3).map((comics, index) => (
             <Card
               key={index}
@@ -46,8 +47,8 @@ function Comics() {
               onClick={() => openModal(index + startIndex)}
             />
           ))}
-        </ContainerCardMovies>
-      </WrapperCardContainerMovies>
+        </ContainerCard>
+      </WrapperCardContainer>
 
       <>
         {modalOpen && (

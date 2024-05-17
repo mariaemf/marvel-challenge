@@ -1,35 +1,40 @@
 import { useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import Card from "../../components/Card/Card";
 import {
-  ButtonCard,
-  ContainerCardMovies,
+  ButtonFilter,
   DropDownContent,
   DropDownFilter,
   FilterIcon,
-  WrapperCardContainerMovies,
 } from "./styled";
-import { movies } from "./moviesData";
-import { moviesDetails } from "./moviesDetailsData";
-import DetaileadModal from "../../components/DetailedModal/DetaileadModal";
 import {
+  ButtonCard,
+  ContainerCard,
   WrapperButtonCard,
+  WrapperCardContainer,
   WrapperModal,
   WrapperModalButton,
-} from "../Characters/styled";
+} from "../../components/Layout/GlobalStyled";
+import Card from "../../components/Card/Card";
+import { movies as movieData } from "./moviesData";
+import { moviesDetails } from "./moviesDetailsData";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
+import DetaileadModal from "../../components/DetailedModal/DetaileadModal";
 
 function Movies() {
   const [startIndex, setStartIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedMoviesIndex, setSelectedMoviesIndex] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [filter, setFilter] = useState("lancamento");
 
   const onNext = () => {
-    setStartIndex((prevIndex) => prevIndex + 1);
+    setStartIndex((prevIndex) => (prevIndex + 1) % movieData.length);
   };
 
   const onPrevious = () => {
-    setStartIndex((prevIndex) => prevIndex - 1);
+    setStartIndex(
+      (prevIndex) => (prevIndex - 1 + movieData.length) % movieData.length
+    );
   };
 
   const openModal = (index) => {
@@ -49,11 +54,22 @@ function Movies() {
     }
   };
 
-  const [isOpen, setIsOpen] = useState(false);
-
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+  };
+
+  const sortedMovies = [...movieData].sort((a, b) => {
+    if (filter === "lancamento") {
+      return a.lancamento - b.lancamento;
+    } else if (filter === "cronologia") {
+      return a.cronologia - b.cronologia;
+    }
+    return 0;
+  });
 
   return (
     <>
@@ -68,31 +84,37 @@ function Movies() {
         </FilterIcon>
         {isOpen && (
           <DropDownContent show={isOpen}>
-            <h2>lançamento</h2>
-            <h2>cronologia</h2>
+            <ButtonFilter onClick={() => handleFilterChange("cronologia")}>
+              cronologia
+            </ButtonFilter>
+            <ButtonFilter onClick={() => handleFilterChange("lancamento")}>
+              lançamento
+            </ButtonFilter>
           </DropDownContent>
         )}
       </DropDownFilter>
 
-      <WrapperCardContainerMovies>
-        <ContainerCardMovies>
-          {movies.slice(startIndex, startIndex + 3).map((movie, index) => (
-            <Card
-              key={index}
-              title={movie.title}
-              description={movie.description}
-              image={movie.image}
-              onClick={() => openModal(index + startIndex)}
-            />
-          ))}
-        </ContainerCardMovies>
-      </WrapperCardContainerMovies>
+      <WrapperCardContainer>
+        <ContainerCard>
+          {sortedMovies
+            .slice(startIndex, startIndex + 3)
+            .map((movie, index) => (
+              <Card
+                key={index}
+                title={movie.title}
+                description={movie.description}
+                image={movie.image}
+                onClick={() => openModal(index + startIndex)}
+              />
+            ))}
+        </ContainerCard>
+      </WrapperCardContainer>
 
       <WrapperButtonCard>
-        <ButtonCard onClick={onPrevious} disabled={startIndex === 0}>
+        <ButtonCard onClick={onPrevious}>
           <FaArrowLeft color="#FF0000" size={42} />
         </ButtonCard>
-        <ButtonCard onClick={onNext} disabled={startIndex >= movies.length - 3}>
+        <ButtonCard onClick={onNext}>
           <FaArrowRight color="#FF0000" size={42} />
         </ButtonCard>
       </WrapperButtonCard>

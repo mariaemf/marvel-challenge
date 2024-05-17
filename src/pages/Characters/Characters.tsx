@@ -1,6 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Card from "../../components/Card/Card";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import DetaileadModal from "../../components/DetailedModal/DetaileadModal";
+
+import { datasCharactersDetails } from "./charactersDetailsData";
+import { characters as characterData, characters } from "./charactersData";
 import {
   ButtonCard,
   ContainerCard,
@@ -8,11 +12,7 @@ import {
   WrapperCardContainer,
   WrapperModal,
   WrapperModalButton,
-} from "./styled";
-import DetaileadModal from "../../components/DetailedModal/DetaileadModal";
-
-import { characters } from "./charactersData";
-import { datasCharactersDetails } from "./charactersDetailsData";
+} from "../../components/Layout/GlobalStyled";
 
 function Characters() {
   const [startIndex, setStartIndex] = useState(0);
@@ -20,11 +20,14 @@ function Characters() {
   const [selectedCharacterIndex, setSelectedCharacterIndex] = useState(null);
 
   const onNext = () => {
-    setStartIndex((prevIndex) => prevIndex + 1);
+    setStartIndex((prevIndex) => (prevIndex + 1) % characterData.length);
   };
 
   const onPrevious = () => {
-    setStartIndex((prevIndex) => prevIndex - 1);
+    setStartIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + characterData.length) % characterData.length
+    );
   };
 
   const openModal = (index) => {
@@ -63,12 +66,15 @@ function Characters() {
         </ContainerCard>
       </WrapperCardContainer>
       <WrapperButtonCard>
-        <ButtonCard onClick={onPrevious} disabled={startIndex === 0}>
+        <ButtonCard
+          onClick={onPrevious}
+          // disabled={startIndex === 0}
+        >
           <FaArrowLeft color="#FF0000" size={42} />
         </ButtonCard>
         <ButtonCard
           onClick={onNext}
-          disabled={startIndex >= characters.length - 3}
+          // disabled={startIndex >= characters.length - 3}
         >
           <FaArrowRight color="#FF0000" size={42} />
         </ButtonCard>
