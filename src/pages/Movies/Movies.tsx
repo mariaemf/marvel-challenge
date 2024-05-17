@@ -4,12 +4,20 @@ import Card from "../../components/Card/Card";
 import {
   ButtonCard,
   ContainerCardMovies,
+  DropDownContent,
+  DropDownFilter,
+  FilterIcon,
   WrapperCardContainerMovies,
 } from "./styled";
 import { movies } from "./moviesData";
 import { moviesDetails } from "./moviesDetailsData";
 import DetaileadModal from "../../components/DetailedModal/DetaileadModal";
-import { WrapperModal, WrapperModalButton } from "../Characters/styled";
+import {
+  WrapperButtonCard,
+  WrapperModal,
+  WrapperModalButton,
+} from "../Characters/styled";
+import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
 
 function Movies() {
   const [startIndex, setStartIndex] = useState(0);
@@ -41,12 +49,32 @@ function Movies() {
     }
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
+      <DropDownFilter show={isOpen}>
+        <FilterIcon onClick={toggleDropdown}>
+          <h2>Filtrar por</h2>
+          {isOpen ? (
+            <RiArrowUpSLine size={32} color="#FF0000" />
+          ) : (
+            <RiArrowDownSLine size={32} color="#FF0000" />
+          )}
+        </FilterIcon>
+        {isOpen && (
+          <DropDownContent show={isOpen}>
+            <h2>lançamento</h2>
+            <h2>cronologia</h2>
+          </DropDownContent>
+        )}
+      </DropDownFilter>
+
       <WrapperCardContainerMovies>
-        <ButtonCard onClick={onPrevious} disabled={startIndex === 0}>
-          <FaArrowLeft color="#FF0000" size={32} />
-        </ButtonCard>
         <ContainerCardMovies>
           {movies.slice(startIndex, startIndex + 3).map((movie, index) => (
             <Card
@@ -57,14 +85,17 @@ function Movies() {
               onClick={() => openModal(index + startIndex)}
             />
           ))}
-          <ButtonCard
-            onClick={onNext}
-            disabled={startIndex >= movies.length - 3}
-          >
-            <FaArrowRight color="#FF0000" size={32} />
-          </ButtonCard>
         </ContainerCardMovies>
       </WrapperCardContainerMovies>
+
+      <WrapperButtonCard>
+        <ButtonCard onClick={onPrevious} disabled={startIndex === 0}>
+          <FaArrowLeft color="#FF0000" size={42} />
+        </ButtonCard>
+        <ButtonCard onClick={onNext} disabled={startIndex >= movies.length - 3}>
+          <FaArrowRight color="#FF0000" size={42} />
+        </ButtonCard>
+      </WrapperButtonCard>
 
       {modalOpen && (
         <WrapperModal>

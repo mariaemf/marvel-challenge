@@ -13,7 +13,7 @@ export const WrapperHeader = styled.div`
   justify-content: space-between;
 
   background: var(--color-background);
-  box-shadow: 0 2px 0px var(--color-primary);
+  border-bottom: 1px solid var(--color-primary);
 `;
 
 export const LogoHeader = styled.div`
@@ -28,6 +28,16 @@ export const LogoHeader = styled.div`
   color: var(--color-text);
   font-family: var(--font-primary);
   background: var(--color-primary);
+
+  @media only screen and (min-width: 580px) and (max-width: 850px) {
+    width: 80px;
+    height: 40px;
+    font-size: 40px;
+  }
+
+  @media only screen and (min-width: 350px) and (max-width: 570px) {
+    display: none;
+  }
 `;
 
 export const HeaderNavigation = styled.div`
@@ -35,6 +45,15 @@ export const HeaderNavigation = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 16rem;
+
+  @media only screen and (min-width: 800px) and (max-width: 1195px) {
+    display: flex;
+    gap: 8rem;
+  }
+
+  @media only screen and (min-width: 400px) and (max-width: 850px) {
+    gap: 4rem;
+  }
 `;
 
 export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
@@ -49,6 +68,13 @@ export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
   &:focus {
     color: var(--color-text);
   }
+
+  @media only screen and (min-width: 400px) and (max-width: 850px) {
+    font-size: 20px;
+    font-family: var(--font-secondary);
+    font-weight: bold;
+    text-decoration: none;
+  }
 `;
 export const UserSection = styled.div`
   display: flex;
@@ -56,6 +82,16 @@ export const UserSection = styled.div`
   align-items: center;
 
   gap: 24px;
+
+  @media only screen and (min-width: 400px) and (max-width: 850px) {
+    flex-direction: column;
+    display: flex;
+    margin-left: 32px;
+    gap: 8px;
+    img {
+      width: 40px;
+    }
+  }
 `;
 
 export const GetOutButton = styled.button`
@@ -66,7 +102,6 @@ export const GetOutButton = styled.button`
   font-size: 24px;
 
   cursor: pointer;
-
   &:hover {
     color: var(--color-text);
   }

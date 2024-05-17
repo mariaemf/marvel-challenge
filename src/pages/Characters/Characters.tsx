@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import {
   ButtonCard,
   ContainerCard,
+  WrapperButtonCard,
   WrapperCardContainer,
   WrapperModal,
   WrapperModalButton,
@@ -47,10 +48,6 @@ function Characters() {
   return (
     <>
       <WrapperCardContainer>
-        <ButtonCard onClick={onPrevious} disabled={startIndex === 0}>
-          <FaArrowLeft color="#FF0000" size={32} />
-        </ButtonCard>
-
         <ContainerCard>
           {characters
             .slice(startIndex, startIndex + 3)
@@ -63,15 +60,19 @@ function Characters() {
                 onClick={() => openModal(index + startIndex)}
               />
             ))}
-          <ButtonCard
-            onClick={onNext}
-            disabled={startIndex >= characters.length - 3}
-          >
-            <FaArrowRight color="#FF0000" size={32} />
-          </ButtonCard>
         </ContainerCard>
       </WrapperCardContainer>
-
+      <WrapperButtonCard>
+        <ButtonCard onClick={onPrevious} disabled={startIndex === 0}>
+          <FaArrowLeft color="#FF0000" size={42} />
+        </ButtonCard>
+        <ButtonCard
+          onClick={onNext}
+          disabled={startIndex >= characters.length - 3}
+        >
+          <FaArrowRight color="#FF0000" size={42} />
+        </ButtonCard>
+      </WrapperButtonCard>
       <>
         {modalOpen && (
           <WrapperModal>

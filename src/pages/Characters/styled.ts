@@ -4,13 +4,40 @@ export const WrapperCardContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  margin-top: 8rem;
   gap: 42px;
 `;
 
 export const ContainerCard = styled.div`
   display: flex;
   gap: 42px;
+
+  @media only screen and (min-width: 750px) and (max-width: 960px) {
+    width: 100%;
+    display: flex;
+    padding: 24px;
+  }
+  @media only screen and (min-width: 375px) and (max-width: 740px) {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    top: 42px;
+  }
+`;
+
+export const WrapperButtonCard = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+
+  @media only screen and (min-width: 375px) and (max-width: 740px) {
+    position: relative;
+    display: flex;
+    top: 4rem;
+  }
 `;
 
 export const ButtonCard = styled.button`

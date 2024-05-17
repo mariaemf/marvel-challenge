@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerModal = styled.div`
-  position: fixed; /* Alterado para 'fixed' */
+  position: fixed;
   height: 430px;
 
   top: 50%;
