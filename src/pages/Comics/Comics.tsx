@@ -12,7 +12,7 @@ import { datasComicsDetails } from "./comicsDetailsData";
 import DetaileadModal from "../../components/DetailedModal/DetaileadModal";
 
 function Comics() {
-  const [startIndex, setStartIndex] = useState(0);
+  const [startIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedComicsIndex, setSelectedComicsIndex] = useState<number | null>(
     null
