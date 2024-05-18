@@ -20,6 +20,7 @@ export const DropDownFilter = styled.div<DropDownContentProps>`
   position: absolute;
   top: 11rem;
   left: 2rem;
+  cursor: pointer;
 
   h2 {
     font-size: 16px;
@@ -27,9 +28,32 @@ export const DropDownFilter = styled.div<DropDownContentProps>`
     font-family: var(--font-secondary);
     font-weight: bold;
   }
-
+  &:hover h2 {
+    color: var(--color-secondary);
+  }
   max-height: ${(props: DropDownContentProps) =>
     props.show ? "300px" : "60px"};
+
+  @media only screen and (min-width: 746px) and (max-width: 1600px) {
+    top: 7.5rem;
+    gap: 4px;
+  }
+
+  @media only screen and (min-width: 375px) and (max-width: 590px) {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+
+    top: 8rem;
+    left: 2rem;
+    h2 {
+      font-size: 12px;
+      color: var(--color-primary);
+      font-family: var(--font-secondary);
+      font-weight: bold;
+    }
+  }
 
   @media only screen and (min-width: 375px) and (max-width: 590px) {
     position: absolute;

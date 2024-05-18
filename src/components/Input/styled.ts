@@ -13,4 +13,8 @@ export const StyledInput = styled.input`
     font-family: var(--font-axiforma-light);
     font-size: 16px;
   }
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    width: 300px;
+    height: 60px;
+  }
 `;

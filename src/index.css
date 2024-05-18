@@ -26,4 +26,8 @@ body {
     url("./assets/background.svg") no-repeat;
   background-size: cover;
   background-position: center left;
+
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    background: #0c0a09;
+  }
 }

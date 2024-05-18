@@ -67,6 +67,7 @@ export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
   &:hover,
   &:focus {
     color: var(--color-text);
+    border-bottom: 1px solid var(--color-primary);
   }
 
   @media only screen and (min-width: 400px) and (max-width: 850px) {
@@ -74,6 +75,9 @@ export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
     font-family: var(--font-secondary);
     font-weight: bold;
     text-decoration: none;
+  }
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    font-size: 18px;
   }
 `;
 export const UserSection = styled.div`
@@ -92,6 +96,12 @@ export const UserSection = styled.div`
       width: 40px;
     }
   }
+
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    img {
+      display: none;
+    }
+  }
 `;
 
 export const GetOutButton = styled.button`
@@ -102,7 +112,14 @@ export const GetOutButton = styled.button`
   font-size: 24px;
 
   cursor: pointer;
+
   &:hover {
     color: var(--color-text);
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    font-size: 18px;
+
+    border-bottom: 1px solid var(--color-primary);
   }
 `;

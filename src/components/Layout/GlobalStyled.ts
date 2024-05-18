@@ -133,6 +133,21 @@ export const WrapperLogo = styled.div`
     font-size: 100px;
     font-family: var(--font-primary);
   }
+
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    width: 200px;
+    flex-direction: row;
+
+    p {
+      font-size: 50px;
+      width: 150px;
+      height: 60px;
+    }
+
+    span {
+      font-size: 50px;
+    }
+  }
 `;
 
 export const WelcomeText = styled.div`
@@ -144,6 +159,13 @@ export const WelcomeText = styled.div`
   padding-left: 2rem;
   margin-bottom: 12px;
   animation: ${fadeIn} 7s ease-in-out;
+
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    font-size: 15px;
+    padding-left: 0px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
 `;
 
 export const TextAccount = styled.div`
@@ -152,6 +174,10 @@ export const TextAccount = styled.div`
   font-weight: lighter;
   font-size: 20px;
   animation: ${fadeIn} 7s ease-in-out;
+
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 export const InputGroup = styled.div`
@@ -173,6 +199,16 @@ export const ButtonLoginOrSingUp = styled.button`
 
   cursor: pointer;
   animation: ${fadeIn} 7s ease-in-out;
+
+  &:hover {
+    border: 2px solid var(--color-primary);
+    background: #fff;
+    color: var(--color-primary);
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    width: 320px;
+  }
 `;
 
 export const InputLoginOrSingUp = styled.div`
@@ -214,6 +250,12 @@ export const RegisterLink = styled.div`
     border: none;
     cursor: pointer;
   }
+  &:hover button {
+    color: var(--color-secondary);
+  }
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    width: 320px;
+  }
 `;
 
 export const WrapperloginAndPassword = styled.div`
@@ -222,4 +264,11 @@ export const WrapperloginAndPassword = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    justify-content: flex-start;
+    display: flex;
+    align-items: flex-start;
+    gap: 80px;
+  }
 `;
