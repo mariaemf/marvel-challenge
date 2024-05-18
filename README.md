@@ -1,31 +1,42 @@
-# React + TypeScript + Vite
+# Documentação do Projeto - Marvel Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Visão Geral
+O Marvel Challenge é um projeto desenvolvido como parte de um teste, que consiste em uma aplicação web para visualização de personagens e filmes do universo Marvel. A aplicação foi desenvolvida utilizando ReactJS com TypeScript, Styled Components, React Icons, e implementando responsividade para diferentes dispositivos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+# Tecnologias Utilizadas
+* ReactJS: Biblioteca JavaScript para construção de interfaces de usuário.
+* TypeScript: Superset do JavaScript que adiciona tipagem estática ao código.
+* Vite: Ferramenta de build rápida e simples para projetos web modernos.
+* Styled Components: Biblioteca para estilização de componentes React com CSS dentro do JavaScript.
+* React Icons: Conjunto de ícones populares para uso em projetos React.
+* Animações: Inclusão de animações para tornar a experiência do usuário mais dinâmica.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Funcionalidades Implementadas
 
-- Configure the top-level `parserOptions` property like this:
+* Visualização de personagens e filmes da Marvel.
+* Navegação circular para rolar entre os itens.
+* Filtro de ordenação por lançamento ou cronologia.
+* Modais interativos para exibir mais informações sobre os itens.
+* Design responsivo para diferentes tamanhos de tela.
+* Animações para proporcionar uma experiência mais dinâmica aos usuários.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+* ## Como Executar o Projeto
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Clonar o Repositório:
+git clone https://github.com/seu-usuario/marvel-challenge.git
+
+### Instalar as Dependências:
+cd marvel-challenge
+npm install
+
+### Executar a Aplicação:
+npm run dev 
+
+# Conclusão
+O Marvel Challenge é um projeto desenvolvido com ReactJS e TypeScript, utilizando Vite para o ambiente de desenvolvimento, e incluindo animações para proporcionar uma experiência mais dinâmica aos usuários. Esta documentação fornece uma visão geral do projeto e orientações sobre como executá-lo.
+
+
+
 # marvel-challenge
