@@ -36,6 +36,10 @@ export const CardInformation = styled.div`
   height: 200px;
   background-color: rgba(255, 0, 0, 0.7);
   border-radius: 16px 16px 32px 32px;
+
+  &:hover {
+    background-color: rgba(255, 0, 0, 09);
+  }
 `;
 
 export const Title = styled.h2`
@@ -50,17 +54,24 @@ export const Title = styled.h2`
     display: flex;
     margin: 0 32px;
   }
+  @media only screen and (min-width: 600px) and (max-width: 840px) {
+    font-size: 16px;
+    margin: 12px 0 8px 0;
+  }
 `;
 
 export const Description = styled.p`
   color: var(--color-text);
   font-family: var(--font-secondary);
-  font-size: 14px;
+  font-size: 16px;
   padding: 14px;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 16px;
+  @media only screen and (min-width: 600px) and (max-width: 840px) {
+    font-size: 14px;
+  }
 `;
 
 export const SeeDetails = styled.a`
@@ -70,4 +81,8 @@ export const SeeDetails = styled.a`
   text-decoration: none;
   margin-bottom: 12px;
   cursor: pointer;
+
+  @media only screen and (min-width: 600px) and (max-width: 840px) {
+    font-size: 18px;
+  }
 `;

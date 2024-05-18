@@ -14,6 +14,10 @@ export const WrapperHeader = styled.div`
 
   background: var(--color-background);
   border-bottom: 1px solid var(--color-primary);
+
+  @media only screen and (min-width: 400px) and (max-width: 850px) {
+    gap: 4rem;
+  }
 `;
 
 export const LogoHeader = styled.div`
@@ -87,17 +91,18 @@ export const UserSection = styled.div`
 
   gap: 24px;
 
-  @media only screen and (min-width: 400px) and (max-width: 850px) {
+  @media only screen and (min-width: 600px) and (max-width: 850px) {
     flex-direction: column;
     display: flex;
     margin-left: 32px;
     gap: 8px;
+
     img {
       width: 40px;
     }
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 480px) {
+  @media only screen and (min-width: 320px) and (max-width: 599px) {
     img {
       display: none;
     }
