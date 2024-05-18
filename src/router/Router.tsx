@@ -4,12 +4,14 @@ import { Layout } from "../components/Layout/Layout";
 import Characters from "../pages/Characters/Characters";
 import Movies from "../pages/Movies/Movies";
 import Comics from "../pages/Comics/Comics";
+import CreateAccount from "../pages/CreateAccount/CreateAccount";
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Register />} />
+        <Route path="/createAccount" element={<CreateAccount />} />
 
         <Route element={<Layout />}>
           <Route path="/characters" element={<Characters />} />

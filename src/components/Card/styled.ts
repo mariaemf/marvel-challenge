@@ -36,15 +36,6 @@ export const CardInformation = styled.div`
   height: 200px;
   background-color: rgba(255, 0, 0, 0.7);
   border-radius: 16px 16px 32px 32px;
-
-  /* @media only screen and (min-width: 600px) and (max-width: 840px) {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  } */
 `;
 
 export const Title = styled.h2`

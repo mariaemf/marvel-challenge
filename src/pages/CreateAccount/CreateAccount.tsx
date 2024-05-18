@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/Input/Input";
-import { Password } from "./styled";
 import {
   AuthContainer,
   ButtonLoginOrSingUp,
@@ -13,16 +12,17 @@ import {
   WrapperloginAndPassword,
 } from "../../components/Layout/GlobalStyled";
 
-function Register() {
+function CreateAccount() {
   const navigate = useNavigate();
 
-  const handleLoginButtonClick = () => {
+  const handleLogin = () => {
     navigate("/characters");
   };
 
   const handleCreateAccount = () => {
-    navigate("/createAccount");
+    navigate("/");
   };
+
   return (
     <AuthContainer>
       <WrapperLogo>
@@ -30,35 +30,31 @@ function Register() {
         <span>RVEL</span>
       </WrapperLogo>
 
-      <WelcomeText>Bem vindo(a) de volta!</WelcomeText>
-      <TextAccount>Acesse sua conta:</TextAccount>
+      <WelcomeText>Bem vindo(a)!</WelcomeText>
+      <TextAccount>Crie sua conta:</TextAccount>
 
       <InputGroup>
         <Input placeholder="Usuario" type="email" />
         <Input placeholder="Senha" type="password" />
+        <Input placeholder="Confirme sua senha" type="password" />
       </InputGroup>
 
       <WrapperloginAndPassword>
         <InputLoginOrSingUp>
-          <input type="checkbox" id="salvarLogin" name="salvarLogin" />
-          <label htmlFor="salvarLogin">Salvar login</label>
+          <input type="checkbox" id="aceitarTermos" name="aceitarTermos" />
+          <label htmlFor="aceitarTermos">Aceito os termos e condições</label>
         </InputLoginOrSingUp>
-
-        <Password>
-          <a>Esqueci a senha</a>
-        </Password>
       </WrapperloginAndPassword>
-      <ButtonLoginOrSingUp onClick={handleLoginButtonClick}>
-        Entrar
-      </ButtonLoginOrSingUp>
+
+      <ButtonLoginOrSingUp onClick={handleLogin}>Cadastrar</ButtonLoginOrSingUp>
       <RegisterLink>
         <p>
-          Ainda não tem o login?
-          <button onClick={handleCreateAccount}>Cadastre-se</button>
+          Já possui uma conta?
+          <button onClick={handleCreateAccount}>Faça login</button>
         </p>
       </RegisterLink>
     </AuthContainer>
   );
 }
 
-export default Register;
+export default CreateAccount;
