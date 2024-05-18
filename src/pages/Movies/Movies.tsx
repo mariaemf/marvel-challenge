@@ -92,11 +92,9 @@ function Movies() {
           <DropDownContent show={isOpen}>
             <ButtonFilter onClick={() => handleFilterChange("cronologia")}>
               cronologia
-              <MdAccessTime size={20} />
             </ButtonFilter>
             <ButtonFilter onClick={() => handleFilterChange("lancamento")}>
               lançamento
-              <FaRegCirclePlay />
             </ButtonFilter>
           </DropDownContent>
         )}

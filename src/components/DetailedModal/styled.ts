@@ -45,6 +45,17 @@ export const ContainerModal = styled.div`
     flex-direction: column;
     padding: 16px;
   }
+  @media only screen and (min-width: 300px) and (max-width: 399px) {
+    height: 250px;
+    width: 70%;
+    max-width: 350px;
+
+    left: 44%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 12px;
+  }
 `;
 
 export const WrapperImageModal = styled.div`
@@ -52,6 +63,11 @@ export const WrapperImageModal = styled.div`
   margin-left: -10px;
   margin-top: -6px;
   @media only screen and (min-width: 400px) and (max-width: 599px) {
+    img {
+      display: none;
+    }
+  }
+  @media only screen and (min-width: 300px) and (max-width: 399px) {
     img {
       display: none;
     }
@@ -81,6 +97,9 @@ export const TitleModal = styled.h2`
   @media only screen and (min-width: 400px) and (max-width: 599px) {
     font-size: 28px;
   }
+  @media only screen and (min-width: 300px) and (max-width: 399px) {
+    font-size: 20px;
+  }
 `;
 
 export const WrapperDescriptions = styled.div`
@@ -104,6 +123,18 @@ export const WrapperDescriptions = styled.div`
     font-family: var(--font-axiforma-thin);
     text-transform: capitalize;
   }
+  @media only screen and (min-width: 300px) and (max-width: 399px) {
+    h4 {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    p {
+      font-size: 12px;
+    }
+    span {
+      font-size: 12px;
+    }
+  }
 `;
 
 export const ContainerSynopsisDescription = styled.div`
@@ -118,6 +149,12 @@ export const ContainerSynopsisDescription = styled.div`
   @media only screen and (min-width: 400px) and (max-width: 599px) {
     p {
       font-size: 12px;
+      margin-bottom: 8px;
+    }
+  }
+  @media only screen and (min-width: 300px) and (max-width: 399px) {
+    p {
+      font-size: 10px;
       margin-bottom: 8px;
     }
   }
@@ -141,6 +178,13 @@ export const Reviews = styled.div`
       color: var(--color-text);
       font-family: var(--font-axiforma-thin);
       margin-top: 16px;
+    }
+  }
+  @media only screen and (min-width: 300px) and (max-width: 399px) {
+    margin-top: 4px;
+
+    h3 {
+      font-size: 16px;
     }
   }
 `;

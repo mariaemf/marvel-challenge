@@ -37,7 +37,7 @@ export const DropDownFilter = styled.div<DropDownContentProps>`
     gap: 4px;
   }
 
-  @media only screen and (min-width: 375px) and (max-width: 590px) {
+  @media only screen and (min-width: 458px) and (max-width: 590px) {
     position: absolute;
     align-items: center;
     justify-content: center;
@@ -53,22 +53,7 @@ export const DropDownFilter = styled.div<DropDownContentProps>`
     }
   }
 
-  @media only screen and (min-width: 375px) and (max-width: 590px) {
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    width: 120px;
-
-    top: 8rem;
-    left: 2rem;
-    h2 {
-      font-size: 12px;
-      color: var(--color-primary);
-      font-family: var(--font-secondary);
-      font-weight: bold;
-    }
-  }
-  @media only screen and (min-width: 300px) and (max-width: 374px) {
+  @media only screen and (min-width: 300px) and (max-width: 458px) {
     h2 {
       font-size: 10px;
       color: var(--color-primary);
@@ -79,7 +64,7 @@ export const DropDownFilter = styled.div<DropDownContentProps>`
     width: 100px;
 
     top: 7.5rem;
-    left: 14px;
+    left: 1rem;
   }
 `;
 export const ButtonFilter = styled.button`
@@ -95,8 +80,11 @@ export const ButtonFilter = styled.button`
   border: none;
   cursor: pointer;
 
-  @media only screen and (min-width: 300px) and (max-width: 374px) {
+  @media only screen and (min-width: 375px) and (max-width: 578px) {
     font-size: 12px;
+  }
+  @media only screen and (min-width: 300px) and (max-width: 374px) {
+    font-size: 10px;
   }
 `;
 export const DropDownContent = styled.div<DropDownContentProps>`
