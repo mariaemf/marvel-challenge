@@ -23,7 +23,9 @@ import DetaileadModal from "../../components/DetailedModal/DetaileadModal";
 function Movies() {
   const [startIndex, setStartIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedMoviesIndex, setSelectedMoviesIndex] = useState(null);
+  const [selectedMoviesIndex, setSelectedMoviesIndex] = useState<number | null>(
+    null
+  );
   const [isOpen, setIsOpen] = useState(false);
   const [filter, setFilter] = useState("lancamento");
 
@@ -37,7 +39,7 @@ function Movies() {
     );
   };
 
-  const openModal = (index) => {
+  const openModal = (index: number) => {
     setSelectedMoviesIndex(index);
     setModalOpen(true);
   };
@@ -58,7 +60,7 @@ function Movies() {
     setIsOpen(!isOpen);
   };
 
-  const handleFilterChange = (newFilter) => {
+  const handleFilterChange = (newFilter: string) => {
     setFilter(newFilter);
   };
 
@@ -123,7 +125,7 @@ function Movies() {
         <WrapperModal>
           <DetaileadModal
             closeModal={closeModal}
-            data={moviesDetails[selectedMoviesIndex]}
+            data={moviesDetails[selectedMoviesIndex ?? 0]}
           />
           <WrapperModalButton>
             <FaArrowRight onClick={nextMovie} color="#FF0000" size={32} />

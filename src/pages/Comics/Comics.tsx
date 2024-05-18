@@ -14,9 +14,11 @@ import DetaileadModal from "../../components/DetailedModal/DetaileadModal";
 function Comics() {
   const [startIndex, setStartIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedComicsIndex, setSelectedComicsIndex] = useState(null);
+  const [selectedComicsIndex, setSelectedComicsIndex] = useState<number | null>(
+    null
+  );
 
-  const openModal = (index) => {
+  const openModal = (index: number) => {
     setSelectedComicsIndex(index);
     setModalOpen(true);
   };
@@ -55,7 +57,7 @@ function Comics() {
           <WrapperModal>
             <DetaileadModal
               closeModal={closeModal}
-              data={datasComicsDetails[selectedComicsIndex]}
+              data={datasComicsDetails[selectedComicsIndex ?? 0]}
             />
             <WrapperModalButton>
               <FaArrowRight onClick={nextComics} color="#FF0000" size={32} />

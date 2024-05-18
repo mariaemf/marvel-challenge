@@ -17,7 +17,9 @@ import {
 function Characters() {
   const [startIndex, setStartIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedCharacterIndex, setSelectedCharacterIndex] = useState(null);
+  const [selectedCharacterIndex, setSelectedCharacterIndex] = useState<
+    number | null
+  >(null);
 
   const onNext = () => {
     setStartIndex((prevIndex) => (prevIndex + 1) % characterData.length);
@@ -30,7 +32,7 @@ function Characters() {
     );
   };
 
-  const openModal = (index) => {
+  const openModal = (index: number) => {
     setSelectedCharacterIndex(index);
     setModalOpen(true);
   };
@@ -84,7 +86,7 @@ function Characters() {
           <WrapperModal>
             <DetaileadModal
               closeModal={closeModal}
-              data={datasCharactersDetails[selectedCharacterIndex]}
+              data={datasCharactersDetails[selectedCharacterIndex ?? 0]}
             />
             <WrapperModalButton>
               <FaArrowRight onClick={nextCharacter} color="#FF0000" size={32} />

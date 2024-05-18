@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const ContainerModal = styled.div`
   position: fixed;
-  height: 600px;
+  height: 500px;
 
   top: 50%;
   left: 30%;
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   z-index: 1001;
 
   transform: translate(-50%, -50%);
