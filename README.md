@@ -4,6 +4,9 @@
 # Visão Geral
 O Marvel Challenge é um projeto desenvolvido como parte de um teste, que consiste em uma aplicação web para visualização de personagens e filmes do universo Marvel. A aplicação foi desenvolvida utilizando ReactJS com TypeScript, Styled Components, React Icons, e implementando responsividade para diferentes dispositivos.
 
+# Extra 
+o site esta online na web este e o endereco para acesso 
+https://marvelchallenge.netlify.app/
 
 # Tecnologias Utilizadas
 * ReactJS: Biblioteca JavaScript para construção de interfaces de usuário.
@@ -21,22 +24,23 @@ O Marvel Challenge é um projeto desenvolvido como parte de um teste, que consis
 * Modais interativos para exibir mais informações sobre os itens.
 * Design responsivo para diferentes tamanhos de tela.
 * Animações para proporcionar uma experiência mais dinâmica aos usuários.
+* Sessão de cadastro para novos usuários.
+* Função de logout acessível pelo cabeçalho.
 
-* ## Como Executar o Projeto
+## Como Executar o Projeto
 
 ### Clonar o Repositório:
-git clone https://github.com/seu-usuario/marvel-challenge.git
+`git clone https://github.com/seu-usuario/marvel-challenge.git`
+
 
 ### Instalar as Dependências:
-cd marvel-challenge
-npm install
+`cd marvel-challenge`
+`npm install`
 
 ### Executar a Aplicação:
-npm run dev 
-
-# Conclusão
-O Marvel Challenge é um projeto desenvolvido com ReactJS e TypeScript, utilizando Vite para o ambiente de desenvolvimento, e incluindo animações para proporcionar uma experiência mais dinâmica aos usuários. Esta documentação fornece uma visão geral do projeto e orientações sobre como executá-lo.
+`npm run dev`
 
 
 
-# marvel-challenge
+
+
