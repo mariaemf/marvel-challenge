@@ -202,7 +202,7 @@ export const ButtonLoginOrSingUp = styled.button`
 
   &:hover {
     border: 2px solid var(--color-primary);
-    background: #fff;
+    background: var(--color-background);
     color: var(--color-primary);
   }
 

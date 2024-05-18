@@ -28,9 +28,7 @@ export const DropDownFilter = styled.div<DropDownContentProps>`
     font-family: var(--font-secondary);
     font-weight: bold;
   }
-  &:hover h2 {
-    color: var(--color-secondary);
-  }
+
   max-height: ${(props: DropDownContentProps) =>
     props.show ? "300px" : "60px"};
 
@@ -73,6 +71,8 @@ export const DropDownFilter = styled.div<DropDownContentProps>`
 `;
 export const ButtonFilter = styled.button`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 16px;
   color: var(--color-primary);
   font-family: var(--font-secondary);
@@ -80,6 +80,7 @@ export const ButtonFilter = styled.button`
 
   background: transparent;
   border: none;
+  cursor: pointer;
 `;
 export const DropDownContent = styled.div<DropDownContentProps>`
   display: ${(props) => (props.show ? "flex" : "none")};

@@ -13,7 +13,11 @@ import {
   WrapperModal,
   WrapperModalButton,
 } from "../../components/Layout/GlobalStyled";
+import { MdAccessTime } from "react-icons/md";
+import { FaRegCirclePlay } from "react-icons/fa6";
+
 import Card from "../../components/Card/Card";
+
 import { movies as movieData } from "./moviesData";
 import { moviesDetails } from "./moviesDetailsData";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -88,9 +92,11 @@ function Movies() {
           <DropDownContent show={isOpen}>
             <ButtonFilter onClick={() => handleFilterChange("cronologia")}>
               cronologia
+              <MdAccessTime size={20} />
             </ButtonFilter>
             <ButtonFilter onClick={() => handleFilterChange("lancamento")}>
               lançamento
+              <FaRegCirclePlay />
             </ButtonFilter>
           </DropDownContent>
         )}

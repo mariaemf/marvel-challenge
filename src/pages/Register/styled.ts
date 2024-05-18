@@ -19,7 +19,7 @@ export const Password = styled.div`
   cursor: pointer;
   animation: ${fadeIn} 7s ease-in-out;
 
-  &:hover button {
-    color: var(--color-primary);
+  &:hover {
+    border-bottom: 1px solid var(--color-text);
   }
 `;
