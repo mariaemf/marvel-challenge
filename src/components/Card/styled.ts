@@ -16,6 +16,9 @@ export const WrappperCard = styled.div`
   @media only screen and (min-width: 375px) and (max-width: 600px) {
     width: 200px;
   }
+  @media only screen and (min-width: 300px) and (max-width: 374px) {
+    width: 150px;
+  }
 `;
 
 export const CardImage = styled.img`
@@ -40,6 +43,9 @@ export const CardInformation = styled.div`
   &:hover {
     background-color: rgba(255, 0, 0, 09);
   }
+  @media only screen and (min-width: 300px) and (max-width: 374px) {
+    height: 150px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -58,6 +64,9 @@ export const Title = styled.h2`
     font-size: 16px;
     margin: 12px 0 8px 0;
   }
+  @media only screen and (min-width: 300px) and (max-width: 374px) {
+    font-size: 14px;
+  }
 `;
 
 export const Description = styled.p`
@@ -72,6 +81,9 @@ export const Description = styled.p`
   @media only screen and (min-width: 600px) and (max-width: 840px) {
     font-size: 14px;
   }
+  @media only screen and (min-width: 300px) and (max-width: 374px) {
+    font-size: 10px;
+  }
 `;
 
 export const SeeDetails = styled.a`
@@ -84,5 +96,8 @@ export const SeeDetails = styled.a`
 
   @media only screen and (min-width: 600px) and (max-width: 840px) {
     font-size: 18px;
+  }
+  @media only screen and (min-width: 300px) and (max-width: 374px) {
+    font-size: 16px;
   }
 `;

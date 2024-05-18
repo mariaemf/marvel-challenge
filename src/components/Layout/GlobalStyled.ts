@@ -44,6 +44,13 @@ export const ContainerCard = styled.div`
     position: relative;
     bottom: 4rem;
   }
+  @media only screen and (min-width: 300px) and (max-width: 374px) {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    bottom: 40px;
+  }
 `;
 
 export const WrapperModal = styled.div`

@@ -68,16 +68,10 @@ function Characters() {
         </ContainerCard>
       </WrapperCardContainer>
       <WrapperButtonCard>
-        <ButtonCard
-          onClick={onPrevious}
-          // disabled={startIndex === 0}
-        >
+        <ButtonCard onClick={onPrevious}>
           <FaArrowLeft color="#FF0000" size={42} />
         </ButtonCard>
-        <ButtonCard
-          onClick={onNext}
-          // disabled={startIndex >= characters.length - 3}
-        >
+        <ButtonCard onClick={onNext}>
           <FaArrowRight color="#FF0000" size={42} />
         </ButtonCard>
       </WrapperButtonCard>

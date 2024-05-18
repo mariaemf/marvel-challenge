@@ -17,6 +17,12 @@ export const WrapperHeader = styled.div`
 
   @media only screen and (min-width: 400px) and (max-width: 850px) {
     gap: 4rem;
+    padding-left: 16px;
+  }
+  @media only screen and (min-width: 300px) and (max-width: 399px) {
+    width: 100%;
+    gap: 24px;
+    padding-left: 16px;
   }
 `;
 
@@ -58,6 +64,9 @@ export const HeaderNavigation = styled.div`
   @media only screen and (min-width: 400px) and (max-width: 850px) {
     gap: 4rem;
   }
+  @media only screen and (min-width: 300px) and (max-width: 399px) {
+    gap: 24px;
+  }
 `;
 
 export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
@@ -67,6 +76,7 @@ export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
   font-family: var(--font-secondary);
   font-weight: bold;
   text-decoration: none;
+  cursor: pointer;
 
   &:hover,
   &:focus {
@@ -82,6 +92,9 @@ export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
   }
   @media only screen and (min-width: 320px) and (max-width: 480px) {
     font-size: 18px;
+  }
+  @media only screen and (min-width: 300px) and (max-width: 399px) {
+    font-size: 16px;
   }
 `;
 export const UserSection = styled.div`

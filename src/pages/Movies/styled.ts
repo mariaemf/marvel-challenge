@@ -68,6 +68,19 @@ export const DropDownFilter = styled.div<DropDownContentProps>`
       font-weight: bold;
     }
   }
+  @media only screen and (min-width: 300px) and (max-width: 374px) {
+    h2 {
+      font-size: 10px;
+      color: var(--color-primary);
+      font-family: var(--font-secondary);
+      font-weight: bold;
+    }
+
+    width: 100px;
+
+    top: 7.5rem;
+    left: 14px;
+  }
 `;
 export const ButtonFilter = styled.button`
   display: flex;
@@ -81,6 +94,10 @@ export const ButtonFilter = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
+
+  @media only screen and (min-width: 300px) and (max-width: 374px) {
+    font-size: 12px;
+  }
 `;
 export const DropDownContent = styled.div<DropDownContentProps>`
   display: ${(props) => (props.show ? "flex" : "none")};
