@@ -1,5 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+`;
 export const ContainerModal = styled.div`
   position: fixed;
   height: 500px;
@@ -10,12 +20,14 @@ export const ContainerModal = styled.div`
   max-width: 800px;
   z-index: 1001;
 
-  transform: translate(-50%, -50%);
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: linear-gradient(to right, #ff0000, #800000);
   border-radius: 32px;
+
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: ${fadeIn} 2s ease forwards;
 
   @media only screen and (min-width: 1187px) and (max-width: 1400px) {
     height: 500px;

@@ -1,8 +1,19 @@
 import { NavLink, NavLinkProps } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 interface StyledNavLinkProps extends NavLinkProps {
   isSelected?: boolean;
 }
+const fadeInAndUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 export const WrapperHeader = styled.div`
   width: 100%;
   height: 110px;
@@ -14,6 +25,7 @@ export const WrapperHeader = styled.div`
 
   background: var(--color-background);
   border-bottom: 1px solid var(--color-primary);
+  animation: ${fadeInAndUp} 3s ease forwards;
 
   @media only screen and (min-width: 400px) and (max-width: 850px) {
     gap: 4rem;
@@ -75,14 +87,15 @@ export const StyledNavLink = styled(NavLink)<StyledNavLinkProps>`
   font-size: 30px;
   font-family: var(--font-secondary);
   font-weight: bold;
+  text-shadow: ${({ isSelected }) =>
+    isSelected ? "1px 1px 0 0 var(--color-primary)" : "none"};
   text-decoration: none;
   cursor: pointer;
+  transition: color 2s ease, border-bottom-width 2s ease;
 
-  &:hover,
-  &:focus {
-    color: var(--color-text);
-    border-bottom: 1px solid var(--color-primary);
-  }
+  border-bottom: ${({ isSelected }) =>
+    isSelected ? "1px solid var(--color-primary)" : "1px solid transparent"};
+  border-bottom-width: ${({ isSelected }) => (isSelected ? "100%" : "0px")};
 
   @media only screen and (min-width: 400px) and (max-width: 850px) {
     font-size: 20px;

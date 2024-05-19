@@ -18,6 +18,15 @@ to {
 }
 `;
 
+const moveArrow = keyframes`
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+`;
+
 export const WrapperCardContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -76,6 +85,10 @@ export const WrapperModal = styled.div`
 export const WrapperModalButton = styled.div`
   display: flex;
   margin-right: 46px;
+
+  svg {
+    animation: ${moveArrow} 1s infinite;
+  }
 `;
 
 export const WrapperButtonCard = styled.div`
@@ -96,8 +109,6 @@ export const ButtonCard = styled.button`
   background: transparent;
   border: none;
 `;
-
-//layout compartilhado entre pagina inicial e de criacao de conta
 
 export const AuthContainer = styled.div`
   display: flex;
@@ -126,7 +137,7 @@ export const WrapperLogo = styled.div`
   width: 400px;
   align-items: center;
 
-  animation: ${slideInFromBottom} 1s ease-in-out;
+  animation: ${slideInFromBottom} 2s ease-in-out;
 
   p {
     font-size: 100px;

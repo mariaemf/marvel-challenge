@@ -14,7 +14,7 @@ export const DropDownFilter = styled.div<DropDownContentProps>`
 
   border: 3px solid var(--color-primary);
   border-radius: 8px;
-  background: transparent;
+  background: #000;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
   position: absolute;
