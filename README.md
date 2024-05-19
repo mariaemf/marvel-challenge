@@ -16,16 +16,20 @@ https://marvelchallenge.netlify.app/
 * React Icons: Conjunto de ícones populares para uso em projetos React.
 * Animações: Inclusão de animações para tornar a experiência do usuário mais dinâmica.
 
-# Funcionalidades Implementadas
+# Funcionalidades requeridas.
 
 * Visualização de personagens e filmes da Marvel.
 * Navegação circular para rolar entre os itens.
 * Filtro de ordenação por lançamento ou cronologia.
 * Modais interativos para exibir mais informações sobre os itens.
+* Função de logout acessível pelo cabeçalho.
+
+# Novas funcionalidades implementadas.
 * Design responsivo para diferentes tamanhos de tela.
 * Animações para proporcionar uma experiência mais dinâmica aos usuários.
 * Sessão de cadastro para novos usuários.
-* Função de logout acessível pelo cabeçalho.
+* Sessão de log out ao selecionar botão de saída.
+#
 
 ## Como Executar o Projeto
 
