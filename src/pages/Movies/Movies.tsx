@@ -13,8 +13,6 @@ import {
   WrapperModal,
   WrapperModalButton,
 } from "../../components/Layout/GlobalStyled";
-import { MdAccessTime } from "react-icons/md";
-import { FaRegCirclePlay } from "react-icons/fa6";
 
 import Card from "../../components/Card/Card";
 
